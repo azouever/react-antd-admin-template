@@ -22,6 +22,24 @@ const menuList = [
     roles:["admin","editor"]
   },
   {
+    title: "业务线配置",
+    path: "/bizInit",
+    icon: "table",
+    roles:["admin"],
+    children:[
+      {
+        title: "app配置",
+        path: "/bizInit/app",
+        roles:["admin"]
+      },
+      {
+        title: "acl配置",
+        path: "/bizInit/acl",
+        roles:["admin"]
+      }
+    ]
+  },
+  {
     title: "权限测试",
     path: "/permission",
     icon: "lock",

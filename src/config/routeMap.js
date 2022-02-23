@@ -25,6 +25,9 @@ const User = Loadable({loader: () => import(/*webpackChunkName:'User'*/'@/views/
 const About = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/views/about'),loading: Loading});
 const Bug = Loadable({loader: () => import(/*webpackChunkName:'Bug'*/'@/views/bug'),loading: Loading});
 
+const BizInitApp = Loadable({loader: () => import(/*webpackChunkName:'BizInitApp'*/'@/views/bizInit/bizInitApp'),loading: Loading});
+const BizInitAcl = Loadable({ loader: () => import(/*webpackChunkName:'BizInitAcl'*/'@/views/bizInit/bizInitAcl'),loading: Loading });
+
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
   { path: "/doc", component: Doc, roles: ["admin","editor","guest"] },
@@ -50,4 +53,7 @@ export default [
   { path: "/about", component: About, roles: ["admin", "editor", "guest"] },
   { path: "/bug", component: Bug, roles: ["admin"] },
   { path: "/error/404", component: Error404 },
+
+  { path: "/bizInit/app", component: BizInitApp, roles: ["admin"] },
+  { path: "/bizInit/acl", component: BizInitAcl, roles: ["admin"] }
 ];
